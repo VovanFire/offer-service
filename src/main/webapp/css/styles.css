@@ -1,0 +1,40 @@
+.controls-bar {
+    padding-bottom: 25px;
+    padding-top: 10px;
+}
+
+.controls {
+    text-align: center;
+}
+
+
+.float-form.panel {
+    position:relative;
+    left: 50%;
+    width:500px;
+    margin-top: 100px; /*set to a negative number 1/2 of your height*/
+    margin-left: -250px; /*set to a negative number 1/2 of your width*/
+}
+
+.float-form.form-wide.panel {
+    width:630px;
+    margin-left: -384px;
+}
+
+h1 span {
+    font-size: 24px;
+    margin-top: 4px;
+    color: #aaa;
+}
+h1 span.user {
+    font-size: 13px;
+    color: #337ab7;
+    display: inline-block;
+    margin-right: 12px;
+    position: relative;
+}
+
+
+.register {
+    margin-left: 20px;
+}
