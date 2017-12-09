@@ -27,6 +27,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile 'org.xerial:sqlite-jdbc:3.20.1'
 	runtime('org.springframework.boot:spring-boot-devtools')
 	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
 	testCompile('org.springframework.boot:spring-boot-starter-test')

@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class WelcomeController {
-    @RequestMapping("/")
+
+       @RequestMapping("/login")
     public String welcome(Model model) {
         model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication());
         return "index";}}

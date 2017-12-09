@@ -1,10 +1,11 @@
 package com.fire.offer.offerservice.dto;
 
 import com.fire.offer.offerservice.authorization.UserAuthDetailService;
-import com.fire.offer.offerservice.database.DataBaseConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,7 +16,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @SpringBootApplication
 @EnableWebSecurity
-@Import(DataBaseConfig.class)
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 public class WebApplication extends WebSecurityConfigurerAdapter {
 
     @Autowired

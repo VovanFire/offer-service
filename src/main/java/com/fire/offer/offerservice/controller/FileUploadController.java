@@ -2,7 +2,7 @@ package com.fire.offer.offerservice.controller;
 
 import java.io.IOException;
 import java.util.stream.Collectors;
-
+import com.fire.offer.offerservice.dao.OfferCreator;
 
 import com.fire.offer.offerservice.storage.StorageFileNotFoundException;
 import com.fire.offer.offerservice.storage.StorageService;
@@ -35,6 +35,7 @@ public class FileUploadController {
                 .map(path -> MvcUriComponentsBuilder
                         .fromMethodName(FileUploadController.class,"serveFile",path.getFileName()
                                 .toString()).build().toString()).collect(Collectors.toList()));
+
         return "uploadForm";
     }
 
