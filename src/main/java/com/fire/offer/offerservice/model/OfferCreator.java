@@ -1,7 +1,6 @@
 package com.fire.offer.offerservice.model;
 
 import java.util.ArrayList;
-import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
 

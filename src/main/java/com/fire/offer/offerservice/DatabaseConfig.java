@@ -20,7 +20,7 @@ import java.util.Properties;
 
 @Configuration
 @PropertySource("db.properties")
-@ComponentScan("com.brainacademy.service")
+@ComponentScan("com.fire.offer.offerservice")
 public class DatabaseConfig {
 
     @Value("${hibernate.connection.driver_class}")
