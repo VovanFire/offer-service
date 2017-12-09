@@ -1,6 +1,6 @@
 package com.fire.offer.offerservice.database;
 
-import com.fire.offer.offerservice.dao.OfferCreator;
+import com.fire.offer.offerservice.model.OfferCreator;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
