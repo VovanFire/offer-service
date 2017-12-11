@@ -1,5 +1,6 @@
 package com.fire.offer.offerservice.dto;
 
+import com.fire.offer.offerservice.DatabaseConfig;
 import com.fire.offer.offerservice.authorization.UserAuthDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -16,12 +17,11 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @SpringBootApplication
 @EnableWebSecurity
-@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+@Import(DatabaseConfig.class)
 public class WebApplication extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    UserAuthDetailService employeeDetailService;
-
+    UserAuthDetailService offerDetailService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -44,7 +44,7 @@ public class WebApplication extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(employeeDetailService)
+        auth.userDetailsService(offerDetailService)
                 .passwordEncoder(new BCryptPasswordEncoder());
     }
 

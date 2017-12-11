@@ -1,18 +1,19 @@
 package com.fire.offer.offerservice.model;
 
 import java.util.ArrayList;
-
+import java.util.Calendar;
 import javax.persistence.*;
 
 @Entity
-public class OfferCreator {
+public class Offer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String title;
     private String description;
-    private double price;
+    private Double price;
+    private Calendar uploadDate;
     private ArrayList uploadedFileNames;
 
     @ManyToOne
@@ -57,5 +58,22 @@ public class OfferCreator {
 
     public void setUploadedFileNames(ArrayList listUploadedFiles) {
         this.uploadedFileNames = listUploadedFiles;
+    }
+
+    public Calendar getUploadDate() {
+        return uploadDate;
+    }
+
+    public void setUploadDate() {
+        Calendar cal = Calendar.getInstance();
+                this.uploadDate = cal;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

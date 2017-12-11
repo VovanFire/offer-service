@@ -1,6 +1,6 @@
 package com.fire.offer.offerservice.database;
 
-import com.fire.offer.offerservice.model.OfferCreator;
+import com.fire.offer.offerservice.model.Offer;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -21,7 +21,7 @@ public class HibernateUtil {
 
             sessionFactory = new Configuration()
                     .addProperties(dbProperties)
-                    .addAnnotatedClass(OfferCreator.class)
+                    .addAnnotatedClass(Offer.class)
                     .buildSessionFactory();
 
         }

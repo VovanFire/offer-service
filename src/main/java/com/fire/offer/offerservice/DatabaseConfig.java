@@ -1,7 +1,7 @@
 package com.fire.offer.offerservice;
 
 import com.fire.offer.offerservice.model.User;
-import com.fire.offer.offerservice.model.OfferCreator;
+import com.fire.offer.offerservice.model.Offer;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +47,7 @@ public class DatabaseConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setAnnotatedClasses(OfferCreator.class, User.class);
+        sessionFactory.setAnnotatedClasses(Offer.class, User.class);
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
