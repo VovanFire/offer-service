@@ -70,6 +70,10 @@ public class OfferDto {
         this.location = location;
     }
 
+    public static Validator validator(OfferDto offerDto) {
+        return new Validator(offerDto);
+    }
+
     public static class Validator {
         private  final OfferDto offerDto;
 private List<String> errors = new ArrayList<>();

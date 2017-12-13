@@ -20,6 +20,9 @@ sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	maven {
+		url 'https://jitpack.io'
+	}
 }
 
 
@@ -28,9 +31,10 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile 'org.xerial:sqlite-jdbc:3.20.1'
+	compile 'com.github.gwenn:sqlite-dialect:d285e22851'
 	compile 'org.hibernate:hibernate-core:5.2.10.Final'
 		runtime('org.springframework.boot:spring-boot-devtools')
 	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.springframework.security:spring-security-test')
+	//testCompile('org.springframework.boot:spring-boot-starter-test')
+	//testCompile('org.springframework.security:spring-security-test')
 }

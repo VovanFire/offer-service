@@ -64,7 +64,7 @@ public class Offer {
         return uploadDate;
     }
 
-    public void setUploadDate() {
+    public void setUploadDate(Calendar uploadDate) {
         Calendar cal = Calendar.getInstance();
                 this.uploadDate = cal;
     }

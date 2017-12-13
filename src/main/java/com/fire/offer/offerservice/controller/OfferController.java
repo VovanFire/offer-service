@@ -54,17 +54,17 @@ public class OfferController {
         offer.setDescription(offerDto.getDescription());
         offer.setLocation(offerDto.getLocation());
         offer.setPrice(offerDto.getPrice());
-        offer.setUploadDate(toString(Calendar.getInstance()));
+        offer.setUploadDate(offerDto.getUploadDate());
 
-        EmployeeDto.Validator validator = EmployeeDto.validator(employeeDto);
+        OfferDto.Validator validator = OfferDto.validator(offerDto);
         if (!validator.validate()) {
             model.addAttribute("errors", validator.getErrors());
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         } else {
-            if (employee.getId() != 0) {
-                employeeDao.update(employee);
+            if (offer.getId() != 0) {
+                offerDao.update(offer);
             } else {
-                employeeDao.create(employee);
+                offerDao.create(offer);
             }
         }
 
